@@ -23,11 +23,15 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         let defaults = UserDefaults.standard
-        billField.text = String(defaults.double(forKey: "bill"))
+        let prevTime = defaults.object(forKey: "time")
+        // less than 10 minutes
+        if prevTime != nil && ((NSDate()).timeIntervalSince(prevTime as! Date) < 600) {
+            billField.text = String(defaults.double(forKey: "bill"))
+        }
+        
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
         // re-calculate tip
         let bill = Double(billField.text!) ?? 0
-        UserDefaults.standard.set(bill, forKey: "bill")
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
@@ -41,7 +45,9 @@ class ViewController: UIViewController {
     
     @IBAction func calculateTip(_ sender: Any) {
         let bill = Double(billField.text!) ?? 0
-        UserDefaults.standard.set(bill, forKey: "bill")
+        let defaults = UserDefaults.standard
+        defaults.set(bill, forKey: "bill")
+        defaults.set(NSDate(), forKey: "time")
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
         
