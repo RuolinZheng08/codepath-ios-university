@@ -127,6 +127,7 @@
                                 </segments>
                                 <connections>
                                     <action selector="changeTipSelection:" destination="C7d-bM-gpU" eventType="valueChanged" id="l2d-CK-KQh"/>
+                                    <action selector="updateView:" destination="YPh-Gh-qCv" eventType="valueChanged" id="Maq-df-Bol"/>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change your default tip percentage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jO2-dt-SVY">
@@ -146,6 +147,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wls-ds-x2A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="YPh-Gh-qCv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1797.5999999999999" y="97.601199400299862"/>
         </scene>
