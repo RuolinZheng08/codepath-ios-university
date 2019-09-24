@@ -9,11 +9,21 @@
 import UIKit
 
 class SettingsViewController: UIViewController {
-
+    
+    var tipSelection = 0
+    
+    @IBOutlet weak var tipControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        tipControl.selectedSegmentIndex = tipSelection
+    }
+    
+    @IBAction func changeTipSelection(_ sender: Any) {
+        let defaults = UserDefaults.standard
+        defaults.set(tipControl.selectedSegmentIndex, forKey: "defaultTip")
+        defaults.synchronize()
     }
     
 
