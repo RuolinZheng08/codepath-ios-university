@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     let tipPercentages = [0.15, 0.18, 0.2]
+    let currencyCode = Locale.current.currencyCode!
 
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let defaults = UserDefaults.standard
         let prevTime = defaults.object(forKey: "time")
         // less than 10 minutes
@@ -32,11 +34,26 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "defaultTip")
         // re-calculate tip
         let bill = Double(billField.text!) ?? 0
+        updateLabels(bill: bill)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        billField.becomeFirstResponder()
+    }
+    
+    func formatMoney(val: Double) -> String {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let formatted = numberFormatter.string(from: NSNumber(value: val))!
+        return currencyCode + " " + formatted
+    }
+    
+    func updateLabels(bill: Double) {
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        tipLabel.text = formatMoney(val: tip)
+        totalLabel.text = formatMoney(val: total)
     }
 
     @IBAction func onTap(_ sender: Any) {
@@ -48,11 +65,7 @@ class ViewController: UIViewController {
         let defaults = UserDefaults.standard
         defaults.set(bill, forKey: "bill")
         defaults.set(NSDate(), forKey: "time")
-        let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
-        let total = bill + tip
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        updateLabels(bill: bill)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
