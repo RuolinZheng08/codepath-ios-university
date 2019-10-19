@@ -61,22 +61,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-xS-MNP">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rr9-xS-MNP">
                                 <rect key="frame" x="20" y="111" width="374" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t2s-fp-ThO" appends="YES" id="lYY-7r-Lvk"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="nAj-zo-PKi"/>
+                        <connections>
+                            <outlet property="photoImage" destination="rr9-xS-MNP" id="hQ5-7x-nH6"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="pRX-FQ-3XO"/>
                     <connections>
                         <outlet property="photoImageView" destination="rr9-xS-MNP" id="AE2-oN-tD4"/>
+                        <segue destination="DZ4-Jz-ETE" kind="presentation" identifier="presentFullScreenPhoto" id="4Oq-Zg-R3K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpe-NT-tMW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="t2s-fp-ThO">
+                    <connections>
+                        <action selector="photoTapped:" destination="EzC-eJ-ct4" id="pVe-Qt-lpt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1815.9420289855075" y="97.767857142857139"/>
+        </scene>
+        <!--Full Screen Photo View Controller-->
+        <scene sceneID="kPQ-hH-jtk">
+            <objects>
+                <viewController id="DZ4-Jz-ETE" customClass="FullScreenPhotoViewController" customModule="Tumblr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6vY-LP-4kK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vsy-Gt-cTd">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udf-Nl-Cfp">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pz5-Rz-j4g">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="396"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="xpc-j9-vxU"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="sqz-TU-igZ"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="WlW-Xe-xKB"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="OxC-O8-wmW" appends="YES" id="yqE-QF-P1c"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="photoImage" destination="pz5-Rz-j4g" id="d4r-lY-NFd"/>
+                        <outlet property="photoScroll" destination="udf-Nl-Cfp" id="nvx-bz-ope"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9lQ-9c-9pw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OxC-O8-wmW"/>
+            </objects>
+            <point key="canvasLocation" x="2602.898550724638" y="97.767857142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gff-u4-7h0">

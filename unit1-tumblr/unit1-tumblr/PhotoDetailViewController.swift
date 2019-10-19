@@ -14,6 +14,10 @@ class PhotoDetailViewController: UIViewController {
     
     var photoUrl: URL?
     
+    @IBAction func photoTapped(_ sender: Any) {
+        performSegue(withIdentifier: "presentFullScreenPhoto", sender: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +25,12 @@ class PhotoDetailViewController: UIViewController {
         photoImageView.af_setImage(withURL: photoUrl!)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "presentFullScreenPhoto" {
+            let vc = segue.destination as! FullScreenPhotoViewController
+            vc.photoUrl = self.photoUrl
+        }
+        
     }
-    */
 
 }

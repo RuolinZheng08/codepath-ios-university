@@ -14,6 +14,7 @@
 		772ED30B235B7B9C008FCCAD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772ED30A235B7B9C008FCCAD /* Assets.xcassets */; };
 		772ED30E235B7B9C008FCCAD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772ED30C235B7B9C008FCCAD /* LaunchScreen.storyboard */; };
 		772ED316235B7BD1008FCCAD /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772ED315235B7BD1008FCCAD /* PostViewController.swift */; };
+		7732A0D1235B8E270067B2D2 /* FullScreenPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732A0D0235B8E270067B2D2 /* FullScreenPhotoViewController.swift */; };
 		77E1A5F0235B7DB30046116D /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1A5EF235B7DB30046116D /* PhotoDetailViewController.swift */; };
 		77E1A5F2235B7F390046116D /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E1A5F1235B7F390046116D /* PhotoCell.swift */; };
 /* End PBXBuildFile section */
@@ -28,6 +29,7 @@
 		772ED30D235B7B9C008FCCAD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772ED30F235B7B9C008FCCAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		772ED315235B7BD1008FCCAD /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		7732A0D0235B8E270067B2D2 /* FullScreenPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenPhotoViewController.swift; sourceTree = "<group>"; };
 		77E1A5EF235B7DB30046116D /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		77E1A5F1235B7F390046116D /* PhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCell.swift; sourceTree = "<group>"; };
 		8EA2207CB021CEEBDE990F33 /* Pods-unit1-tumblr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unit1-tumblr.release.xcconfig"; path = "Target Support Files/Pods-unit1-tumblr/Pods-unit1-tumblr.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				772ED303235B7B9B008FCCAD /* SceneDelegate.swift */,
 				772ED307235B7B9B008FCCAD /* Main.storyboard */,
 				77E1A5F1235B7F390046116D /* PhotoCell.swift */,
+				7732A0D0235B8E270067B2D2 /* FullScreenPhotoViewController.swift */,
 				77E1A5EF235B7DB30046116D /* PhotoDetailViewController.swift */,
 				772ED30A235B7B9C008FCCAD /* Assets.xcassets */,
 				772ED30C235B7B9C008FCCAD /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 				77E1A5F2235B7F390046116D /* PhotoCell.swift in Sources */,
 				772ED302235B7B9B008FCCAD /* AppDelegate.swift in Sources */,
 				77E1A5F0235B7DB30046116D /* PhotoDetailViewController.swift in Sources */,
+				7732A0D1235B8E270067B2D2 /* FullScreenPhotoViewController.swift in Sources */,
 				772ED304235B7B9B008FCCAD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
