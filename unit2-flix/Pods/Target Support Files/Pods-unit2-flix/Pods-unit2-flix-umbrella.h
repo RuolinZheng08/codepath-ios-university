@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_unit1_flixVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_unit1_flixVersionString[];
+FOUNDATION_EXPORT double Pods_unit2_flixVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_unit2_flixVersionString[];
 
