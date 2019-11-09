@@ -11,7 +11,7 @@ import UIKit
 class HomeTableViewController: UITableViewController {
     
     var tweetArray = [NSDictionary]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadTweets()
@@ -55,6 +55,11 @@ class HomeTableViewController: UITableViewController {
         if let imageData = data {
             cell.profileImageView.image = UIImage(data: imageData)
         }
+        
+        cell.tweetId = self.tweetArray[indexPath.row]["id"] as! Int
+        cell.setFavorited(self.tweetArray[indexPath.row]["favorited"] as! Bool)
+        cell.setRetweeted(self.tweetArray[indexPath.row]["retweeted"] as! Bool)
+        
         return cell
     }
     
