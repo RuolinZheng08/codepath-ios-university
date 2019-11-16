@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:pastagram/LoginViewController.swift">
-   </FileRef>
-   <FileRef
-      location = "group:pastagram/FeedViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:pastagram.xcodeproj">
    </FileRef>
    <FileRef

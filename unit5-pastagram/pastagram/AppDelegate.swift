@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Parse.initialize(
         with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
             configuration.applicationId = "pastagram"
-            configuration.server = "https://frozen-earth-42850.herokuapp.com/"
+            configuration.server = "https://frozen-earth-42850.herokuapp.com/parse"
         })
         )
         
